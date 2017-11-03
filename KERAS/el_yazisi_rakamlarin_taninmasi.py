@@ -11,14 +11,14 @@ from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
 
-batch_size = 128
-num_classes = 10
-epochs = 12
+batch_size = 128 # her bir iterasyonda "128" resim alınsın
+num_classes = 10 # ayırt etmek istediğimiz "10" rakam
+epochs = 12 # eğitim 12 epoch sürsün
 
-# input image dimensions
+# giriş resimlerinin boyutları 28 x 28 piksel
 img_rows, img_cols = 28, 28
 
-# the data, shuffled and split between train and test sets
+# veri önce karıştırılıyor (shuffle) sonra da eğitim/test diye ayrılıyor
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
 if K.image_data_format() == 'channels_first':
