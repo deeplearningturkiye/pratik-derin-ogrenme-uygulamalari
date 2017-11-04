@@ -4,6 +4,7 @@ Deep Learning Türkiye topluluğu tarafından hazırlanmıştır.
 Amaç: El yazısı rakamların tanınması.
 Veriseti: MNIST (http://yann.lecun.com/exdb/mnist/)
 Algoritma: Evrişimli Sinir Ağları (Convolutional Neural Networks)
+Microsoft Azure Notebook: https://notebooks.azure.com/deeplearningturkiye/libraries/pratik-derin-ogrenme/html/rakam_tanima_CNN_MNIST.ipynb
 
 Ağ Mimarisi:
 
