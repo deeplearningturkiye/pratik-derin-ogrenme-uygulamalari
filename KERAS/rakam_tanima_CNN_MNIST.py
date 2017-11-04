@@ -1,4 +1,20 @@
-'''MNIST verisetinin evrişimli sinir ağları ile eğitimi.
+'''
+Deep Learning Türkiye topluluğu tarafından hazırlanmıştır.
+
+Amaç: El yazısı rakamların tanınması.
+Veriseti: MNIST (http://yann.lecun.com/exdb/mnist/)
+Algoritma: Evrişimli Sinir Ağları (Convolutional Neural Networks)
+
+Ağ Mimarisi:
+
+- 32 x 3 x 3 CONV
+- 64 x 3 x 4 CONV
+- 2 x 2 MAX POOL
+- DROPOUT (%25)
+- 128 FC
+- DROPOUT (%25)
+- 10 FC
+
 
 12 epoch sonunda 99.25% test doğruluk oranı elde ediliyor.
 '''
@@ -38,31 +54,52 @@ print('x_train shape:', x_train.shape)
 print(x_train.shape[0], 'train samples')
 print(x_test.shape[0], 'test samples')
 
-# convert class vectors to binary class matrices
+# sınıf vektörleri ikili (binary) formununa dönüştürülür
+# "to_catogorical" fonksiyonu ile one-hot-encoding yapıyoruz
 y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
 
 model = Sequential()
+
+# 3x3 boyutunda 32 adet filtreden oluşan ReLU aktivasyonlu CONV katmanı ekleyelim. 
 model.add(Conv2D(32, kernel_size=(3, 3),
                  activation='relu',
                  input_shape=input_shape))
+
+# 3x3 boyutunda 64 adet filtreden oluşan ReLU aktivasyonlu CONV katmanı ekleyelim. 
 model.add(Conv2D(64, (3, 3), activation='relu'))
+
+# 2x2 boyutlu çerçeveden oluşan MAXPOOL katmanı ekleyelim. 
 model.add(MaxPooling2D(pool_size=(2, 2)))
+
+# her seferinde nöronların %25'i atılsın (drop)
 model.add(Dropout(0.25))
+
+# Tam bağlantılı (fully connected) katmanına geçiş olacağı için düzleştirme yapalım 
 model.add(Flatten())
+
+# 128 nörondan oluşan ReLU aktivasyonu FC katmanı ekleyelim 
 model.add(Dense(128, activation='relu'))
+
+# Her seferinde %50'sini atalım (drop)
 model.add(Dropout(0.5))
+
+# Çıkış katmanına sınıf sayısı kadar (10) Softmax aktivasyonlu nöron ekleyelim
 model.add(Dense(num_classes, activation='softmax'))
 
+# Adadelta optimizasyon yöntemini ve cross entropy yitim (loss) fonksiyonunu kullanalım.
 model.compile(loss=keras.losses.categorical_crossentropy,
               optimizer=keras.optimizers.Adadelta(),
               metrics=['accuracy'])
 
+# eğitim işlemini gerçekleştirelim
 model.fit(x_train, y_train,
           batch_size=batch_size,
           epochs=epochs,
           verbose=1,
           validation_data=(x_test, y_test))
+
+# test işlemini gerçekleştirelim ve sonuçları ekrana yazdıralım
 score = model.evaluate(x_test, y_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
