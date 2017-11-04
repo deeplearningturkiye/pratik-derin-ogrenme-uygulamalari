@@ -12,7 +12,7 @@ Ağ Mimarisi:
 - 2 x 2 MAX POOL
 - DROPOUT (%25)
 - 128 FC
-- DROPOUT (%25)
+- DROPOUT (%50)
 - 10 FC
 
 
