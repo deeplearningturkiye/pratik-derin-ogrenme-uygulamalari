@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*- 
 '''
 Deep Learning Türkiye topluluğu tarafından hazırlanmıştır.
 
@@ -124,16 +125,16 @@ else:
                                  horizontal_flip=True,  # Fotoğrafı yatay düzlemde rastgele çevirme.
                                  vertical_flip=False)
 
-                                 # Veri oluşturma için hesaplama
-                                 datagen.fit(x_train)
+    # Veri oluşturma için hesaplama
+    datagen.fit(x_train)
 
-                                 # Canlı olarak arttırılan veri ile modelimizi eğitelim:
-                                 model.fit_generator(datagen.flow(x_train, y_train,
-                                                                  batch_size=batch_size),
-                                                     steps_per_epoch=int(np.ceil(x_train.shape[0] / float(batch_size))),
-                                                     epochs=epochs,
-                                                     validation_data=(x_test, y_test),
-                                                     workers=4)
+    # Canlı olarak arttırılan veri ile modelimizi eğitelim:
+    model.fit_generator(datagen.flow(x_train, y_train,
+                                     batch_size=batch_size),
+                        steps_per_epoch=int(np.ceil(x_train.shape[0] / float(batch_size))),
+                        epochs=epochs,
+                        validation_data=(x_test, y_test),
+                        workers=4)
 
 # Eğitilmiş modelimizi kaydedelim:
 if not os.path.isdir(save_dir):
