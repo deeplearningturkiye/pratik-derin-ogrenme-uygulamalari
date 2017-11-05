@@ -4,7 +4,7 @@ Deep Learning Türkiye topluluğu tarafından hazırlanmıştır.
 
 Amaç: El yazısı rakamların tanınması.
 Veriseti: MNIST (http://yann.lecun.com/exdb/mnist/)
-
+Algoritma: Çok Katmanlı Algılayıcı (Multi-Layer Perceptron (MLP))
 Microsoft Azure Notebook: 
 
 20 epoch sonunda %98.40 test doğruluk oranı elde ediliyor.
