@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*- 
 '''
 Deep Learning Türkiye topluluğu tarafından hazırlanmıştır.
 
