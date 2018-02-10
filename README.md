@@ -7,6 +7,7 @@
 #### Keras
 * [Evrişimli Sinir Ağları (CNN) ile Rakam Tanıma (MNIST veriseti + KERAS kütüphanesi)](https://github.com/deeplearningturkiye/pratik-derin-ogrenme-uygulamalari/blob/master/KERAS/rakam_tanima_CNN_MNIST.py)
 * [Çok Katmanlı Algılayıcı (MLP) ile Rakam Tanıma (MNIST veriseti + KERAS kütüphanesi)](https://github.com/deeplearningturkiye/pratik-derin-ogrenme-uygulamalari/blob/master/KERAS/rakam_tanima_MLP_MNIST.py)
+* [Evrişimli Sinir Ağları (CNN) ile Obje Tanıma (Fashion-MNIST veriseti + KERAS kütüphanesi)](https://github.com/deeplearningturkiye/pratik-derin-ogrenme-uygulamalari/blob/master/KERAS/CNN_Fashion_Mnist.py)
 
 #### PyTorch
 * [Evrişimli Sinir Ağları (CNN) ile Rakam Tanıma (MNIST veriseti + PyTorch kütüphanesi)](https://github.com/deeplearningturkiye/pratik-derin-ogrenme-uygulamalari/blob/master/PyTorch/rakam_tanima_CNN_MNIST.py)
