@@ -152,7 +152,7 @@ plt.figure()
 plt.axis('off')
 plt.title('Orjinal imajlar: Ust Satir, '
           'Bozulmus Girdi: Orta Satir, '
-          'Parazitlerden arındırılmıs Girdi:  Ucuncu satirlar')
+          'Parazitlerden arindirilmis Girdi:  Ucuncu satirlar')
 plt.imshow(imgs, interpolation='none', cmap='gray')
 Image.fromarray(imgs).save('bozulmus_ve_parazit_eklenmis.png')
 plt.show()
