@@ -150,9 +150,9 @@ imgs = np.vstack([np.hstack(i) for i in imgs])
 imgs = (imgs * 255).astype(np.uint8)
 plt.figure()
 plt.axis('off')
-plt.title('Original images: top rows, '
-          'Corrupted Input: middle rows, '
-          'Denoised Input:  third rows')
+plt.title('Orjinal imajlar: Ust Satir, '
+          'Bozulmus Girdi: Orta Satir, '
+          'Parazitlerden arındırılmıs Girdi:  Ucuncu satirlar')
 plt.imshow(imgs, interpolation='none', cmap='gray')
-Image.fromarray(imgs).save('corrupted_and_denoised.png')
+Image.fromarray(imgs).save('bozulmus_ve_parazit_eklenmis.png')
 plt.show()
