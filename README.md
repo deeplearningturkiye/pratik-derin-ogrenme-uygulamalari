@@ -2,6 +2,8 @@
 
 Çalışma, **Deep Learning Türkiye** topluluğu tarafından desteklenmektedir.
 
+Orjinal derin öğrenme örnek kodlarını alıp repomuza Türkçe açıklamalar ile eklenmesine destek vermek isteyenler bu [linkten](https://github.com/deeplearningturkiye/pratik-derin-ogrenme-uygulamalari/blob/master/Nas%C4%B1lKatk%C4%B1daBulunabilrim.md) nasıl katkıda bulunabileceklerini öğrenebilirler.
+
 ### MNIST (Modified National Institute of Standards and Technology) Veriseti
 
 #### Keras
