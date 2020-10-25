@@ -1,0 +1,24 @@
+import my_function
+@pytest.mark.unit
+@pytest.mark.parametrize('use_tf_function', [True, False])
+def test_my_function(use_tf_function):
+
+    def test(arg1, arg2):
+        # REQUEST: Check to make sure this is not being retraced many times.
+        return my_function(arg1, arg2)
+
+    # Sometimes test in Eager mode for debugging, sometimes test in graph mode.
+    test_func = test
+    if use_tf_function:
+        test_func = tf.function(test_func)
+
+    #####Test 1
+    arg1, arg2 = #some setup stuff
+    test_func(arg1, arg2)  # create the graph (tracing happens).
+    results = test_func(arg1, arg2)  # hopefully tracing does not happen a second time.
+    assert results
+
+    #####Test 2
+    arg4, arg3 = #some setup stuff
+    results = test_func(arg3, arg4)  # hopefully tracing does not happen again (if the inputs are tensors and the shapes do not change)
+    assert results
