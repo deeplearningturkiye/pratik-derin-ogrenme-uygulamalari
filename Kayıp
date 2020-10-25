@@ -1,0 +1,10 @@
+
+      departures: "Yükleme Noktaları"
+      arrivals: "Boşaltma Noktaları"
+      containers: "Konteyner Bilgileri"
+      pickup_date: "Teslim Alma Tarihi"
+      unload_country: "Boşaltma Ülkesi"
+      unload_city: "Boşaltma Şehri"
+
+<p>(Aynı rejim tarafından oluşturulan dosyayı okumak kaldırma ve varolan verileri kaydetmek) Deşarj (dosya oluşturma boşaltma kullanıcı tanımlı veri) ve yük: İşleme 2 çalışma modu satıyor. Kurulum modu seçim doğru modda yapılır.</p>
+<p>Dosya biçimi planı alışverişi, başlık kısmını boşaltma sırasında oluşturulan dosya biçimini boşaltma farklıdır.Verileri boşaltmaya boşaltma ve dosya biçimleri bu bölümünde planlarının paylaşımı aynıdır aynı XML-seri mekanizmasını kullanarak işleme (referans elemanları, kayıt kayıtları, vb setleri).</p>
