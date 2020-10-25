@@ -1,0 +1,7 @@
+IndexActionsMenu.Flush" : "Boşalt" ,
+	"IndexActionsMenu.Optimize" : "Optimize et ..." ,
+	"IndexActionsMenu.ForceMerge" : "ForceMerge et ..." ,
+	"IndexActionsMenu.Close" : "Kapa" ,
+	"IndexActionsMenu.Delete" : "Sil ..." ,
+	"IndexInfoMenu.Title" : "Bilgi" ,
+	"IndexInfoMenu.Status" : "Indeks Durumu" ,
