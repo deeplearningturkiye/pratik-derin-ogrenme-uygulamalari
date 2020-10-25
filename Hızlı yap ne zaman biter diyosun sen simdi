@@ -1,0 +1,46 @@
+Açık
+"Tf.function" ın izlenme sayısını say
+# 37323
+ammirato bu sorunu açtı on 5 Mar · 26 yorum
+Etiketler
+comp: çekirdek
+iyi ilk sayı
+stat: katkılar hoş geldiniz
+tür: özellik
+Yorumlar
+@hayalhanemersin Ammirato yorum yaptı on 5 Mar • 
+Lütfen bunun bir özellik isteği olduğundan emin olun. Bizim gereğince GitHub Politikası , sadece adres kodu / doc böcek, performans sorunları, GitHub üzerinde özellik istekleri ve yapı / yükleme sorunları. tag: feature_template
+
+Sistem bilgisi
+
+TensorFlow sürümü (kullanıyorsunuz): 2.1
+Katkıda bulunmaya istekli misiniz (Evet / Hayır): Hayır
+Özelliği ve mevcut davranışı / durumu açıklayın. Bu işlevin ne zaman izlendiğini
+kontrol edebilmek istiyorum tf.function. Bu, işlevlerimin uyumlu olduğunu test etmek için kullanışlıdır tf.functionve hızlanmadan yararlanacaktır (ve her çağrıldıklarında sadece yeni bir grafik oluşturmaz).
+
+İstenilen özelliğe sahip bir örnek şuraya eklenecektir REQUEST:
+
+import my_function
+@pytest.mark.unit
+@pytest.mark.parametrize('use_tf_function', [True, False])
+def test_my_function(use_tf_function):
+
+    def test(arg1, arg2):
+        # REQUEST: Check to make sure this is not being retraced many times.
+        return my_function(arg1, arg2)
+
+    # Sometimes test in Eager mode for debugging, sometimes test in graph mode.
+    test_func = test
+    if use_tf_function:
+        test_func = tf.function(test_func)
+
+    #####Test 1
+    arg1, arg2 = #some setup stuff
+    test_func(arg1, arg2)  # create the graph (tracing happens).
+    results = test_func(arg1, arg2)  # hopefully tracing does not happen a second time.
+    assert results
+
+    #####Test 2
+    arg4, arg3 = #some setup stuff
+    results = test_func(arg3, arg4)  # hopefully tracing does not happen again (if the inputs are tensors and the shapes do not change)
+    assert results
