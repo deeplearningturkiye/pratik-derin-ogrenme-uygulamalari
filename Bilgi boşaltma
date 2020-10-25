@@ -1,0 +1,18 @@
+bildirim . Hata ( " Kaydederken bir hata oluştu " , " Hata " );
+            Böşalternatif();
+            Şurada ();
+            Şurada ();
+        }
+
+        geçersiz Boşalternatif()
+        {
+            aboneTip  =  new  EntityLayer . AboneTip ();
+
+
+denetleyici ( 'FaturaEkleCtrl' ,  işlev ( $ kapsam ,  $ http , $ durum )  {
+  $ kapsam . ftr = { } ;
+  $ kapsam . ftr .bilgi= "" ;
+  $ kapsam . ftr . faturadonem = "" ;
+  $ kapsam . faturaeklee = function ( ) {
+    var  postData = [ ] ;
+    postData . push ( encodeURIComponent ( "bilgi" ) + " = " +  encodeURIComponent ( $ kapsam . ftr . bilgi ) ) 
